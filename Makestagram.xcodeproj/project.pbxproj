@@ -48,6 +48,7 @@
 		DB03BA061B41E1AA001BFF09 /* FriendSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB03BA051B41E1AA001BFF09 /* FriendSearchViewController.swift */; };
 		DB55F4841B41EAEC00FF9B66 /* PhotoTakingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB55F4831B41EAEC00FF9B66 /* PhotoTakingHelper.swift */; };
 		DB55F4871B430D8700FF9B66 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB55F4861B430D8700FF9B66 /* Post.swift */; };
+		DB55F48B1B4334FB00FF9B66 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB55F48A1B4334FB00FF9B66 /* PostTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -191,6 +192,7 @@
 		DB03BA051B41E1AA001BFF09 /* FriendSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FriendSearchViewController.swift; path = ViewControllers/FriendSearchViewController.swift; sourceTree = "<group>"; };
 		DB55F4831B41EAEC00FF9B66 /* PhotoTakingHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhotoTakingHelper.swift; path = Makestagram/PhotoTakingHelper.swift; sourceTree = SOURCE_ROOT; };
 		DB55F4861B430D8700FF9B66 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		DB55F48A1B4334FB00FF9B66 /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -340,6 +342,7 @@
 		62C8C1E21B06BD6500DC3EA7 /* Makestagram */ = {
 			isa = PBXGroup;
 			children = (
+				DB55F4881B4334DC00FF9B66 /* Views */,
 				DB55F4851B430D6D00FF9B66 /* Models */,
 				DB55F47C1B41E9FD00FF9B66 /* PhotoTaking */,
 				6277189C1B0A58E800AF5C6E /* Helpers */,
@@ -396,6 +399,22 @@
 				DB55F4861B430D8700FF9B66 /* Post.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		DB55F4881B4334DC00FF9B66 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DB55F4891B4334DC00FF9B66 /* Timeline */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DB55F4891B4334DC00FF9B66 /* Timeline */ = {
+			isa = PBXGroup;
+			children = (
+				DB55F48A1B4334FB00FF9B66 /* PostTableViewCell.swift */,
+			);
+			path = Timeline;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -587,6 +606,7 @@
 				DB03BA041B41E195001BFF09 /* PhotoViewController.swift in Sources */,
 				62C8C1E61B06BD6500DC3EA7 /* AppDelegate.swift in Sources */,
 				627718971B0A581700AF5C6E /* FilterViewController.swift in Sources */,
+				DB55F48B1B4334FB00FF9B66 /* PostTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
