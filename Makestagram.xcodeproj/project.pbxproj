@@ -49,6 +49,7 @@
 		DB55F4841B41EAEC00FF9B66 /* PhotoTakingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB55F4831B41EAEC00FF9B66 /* PhotoTakingHelper.swift */; };
 		DB55F4871B430D8700FF9B66 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB55F4861B430D8700FF9B66 /* Post.swift */; };
 		DB55F48B1B4334FB00FF9B66 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB55F48A1B4334FB00FF9B66 /* PostTableViewCell.swift */; };
+		DB55F48D1B433B7500FF9B66 /* ParseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB55F48C1B433B7500FF9B66 /* ParseHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -193,6 +194,7 @@
 		DB55F4831B41EAEC00FF9B66 /* PhotoTakingHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhotoTakingHelper.swift; path = Makestagram/PhotoTakingHelper.swift; sourceTree = SOURCE_ROOT; };
 		DB55F4861B430D8700FF9B66 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		DB55F48A1B4334FB00FF9B66 /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
+		DB55F48C1B433B7500FF9B66 /* ParseHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -316,6 +318,7 @@
 			children = (
 				6277189D1B0A58E800AF5C6E /* ErrorHandling.swift */,
 				6277189E1B0A58E800AF5C6E /* ParseLoginHelper.swift */,
+				DB55F48C1B433B7500FF9B66 /* ParseHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -606,6 +609,7 @@
 				DB03BA041B41E195001BFF09 /* PhotoViewController.swift in Sources */,
 				62C8C1E61B06BD6500DC3EA7 /* AppDelegate.swift in Sources */,
 				627718971B0A581700AF5C6E /* FilterViewController.swift in Sources */,
+				DB55F48D1B433B7500FF9B66 /* ParseHelper.swift in Sources */,
 				DB55F48B1B4334FB00FF9B66 /* PostTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
