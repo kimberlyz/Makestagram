@@ -85,7 +85,7 @@
                                                     <state key="normal" image="Heart">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
-                                                    <state key="selected" image="Heart-selected"/>
+                                                    <state key="selected" image="People"/>
                                                     <connections>
                                                         <action selector="likeButtonTapped:" destination="fSx-ZU-PMi" eventType="touchUpInside" id="aej-oZ-EVx"/>
                                                     </connections>
@@ -192,7 +192,6 @@
     <resources>
         <image name="Camera" width="40" height="30"/>
         <image name="Heart" width="72" height="68"/>
-        <image name="Heart-selected" width="72" height="68"/>
         <image name="Home" width="38" height="36"/>
         <image name="More" width="26" height="17"/>
         <image name="People" width="42" height="42"/>

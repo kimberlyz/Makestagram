@@ -17,6 +17,7 @@ class Post : PFObject, PFSubclassing {
     
     var image: Dynamic<UIImage?> = Dynamic(nil)
     var photoUploadTask : UIBackgroundTaskIdentifier?
+    var likes = Dynamic<[PFUser]?>(nil)
     
     // MARK: PFSubclassing Protocol
     
@@ -26,6 +27,8 @@ class Post : PFObject, PFSubclassing {
     
     override init() {
         super.init()
+        
+        
     }
     
     override class func initialize() {
@@ -66,6 +69,45 @@ class Post : PFObject, PFSubclassing {
                     self.image.value = image
                 }
             }
+        }
+    }
+    
+    func fetchLikes() {
+
+        if (likes.value != nil) {
+            return
+        }
+        
+        ParseHelper.likesForPost(self, completionBlock: { (var likes: [AnyObject]?, error: NSError?) -> Void in
+
+            likes = likes?.filter { like in like[ParseHelper.ParseLikeFromUser] != nil }
+            
+            self.likes.value = likes?.map { like in
+                let like = like as! PFObject
+                let fromUser = like[ParseHelper.ParseLikeFromUser] as! PFUser
+                
+                return fromUser
+            }
+        })
+    }
+    
+    func doesUserLikePost(user: PFUser) -> Bool {
+        if let likes = likes.value {
+            return contains(likes, user)
+        } else {
+            return false
+        }
+    }
+    
+    func toggleLikePost(user: PFUser) {
+        if (doesUserLikePost(user)) {
+            // if image is liked, unlike it now
+            likes.value = likes.value?.filter { $0 != user }
+            ParseHelper.unlikePost(user, post: self)
+        } else {
+            // if this image is not liked yet, like it now
+            likes.value?.append(user)
+            ParseHelper.likePost(user, post: self)
         }
     }
 }
