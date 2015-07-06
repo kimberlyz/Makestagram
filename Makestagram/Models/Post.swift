@@ -9,6 +9,7 @@
 import Foundation
 import Parse
 import Bond
+import ConvenienceKit
 
 class Post : PFObject, PFSubclassing {
     
@@ -18,6 +19,8 @@ class Post : PFObject, PFSubclassing {
     var image: Dynamic<UIImage?> = Dynamic(nil)
     var photoUploadTask : UIBackgroundTaskIdentifier?
     var likes = Dynamic<[PFUser]?>(nil)
+    
+    static var imageCache: NSCacheSwift<String, UIImage>!
     
     // MARK: PFSubclassing Protocol
     
@@ -37,6 +40,8 @@ class Post : PFObject, PFSubclassing {
             // inform Parse about this subclass
             self.registerSubclass()
         }
+        
+        Post.imageCache = NSCacheSwift<String, UIImage>()
     }
     
     func uploadPost() {
@@ -49,24 +54,37 @@ class Post : PFObject, PFSubclassing {
         }
         
         imageFile.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
-            // 3
+            
+            if let error = error {
+                ErrorHandling.defaultErrorHandler(error)
+            }
+            
             UIApplication.sharedApplication().endBackgroundTask(self.photoUploadTask!)
         }
         
         // any uploaded post should be associated with the current user
         user = PFUser.currentUser()
         self.imageFile = imageFile
-        saveInBackgroundWithBlock(nil)
+        saveInBackgroundWithBlock(ErrorHandling.errorHandlingCallback)
     }
     
     func downloadImage() {
+        
+        image.value = Post.imageCache[self.imageFile!.name]
+        
         //If the image is not downloaded yet, get it
         if (image.value == nil) {
             imageFile?.getDataInBackgroundWithBlock { (data: NSData?, error: NSError?) -> Void in
+                
+                if let error = error {
+                    ErrorHandling.defaultErrorHandler(error)
+                }
+                
                 if let data = data {
                     let image = UIImage(data: data, scale:1.0)!
-                    
                     self.image.value = image
+                    
+                    Post.imageCache[self.imageFile!.name] = image
                 }
             }
         }
@@ -80,6 +98,10 @@ class Post : PFObject, PFSubclassing {
         
         ParseHelper.likesForPost(self, completionBlock: { (var likes: [AnyObject]?, error: NSError?) -> Void in
 
+            if let error = error {
+                ErrorHandling.defaultErrorHandler(error)
+            }
+            
             likes = likes?.filter { like in like[ParseHelper.ParseLikeFromUser] != nil }
             
             self.likes.value = likes?.map { like in

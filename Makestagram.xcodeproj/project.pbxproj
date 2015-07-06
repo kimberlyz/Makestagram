@@ -50,6 +50,8 @@
 		DB55F4871B430D8700FF9B66 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB55F4861B430D8700FF9B66 /* Post.swift */; };
 		DB55F48B1B4334FB00FF9B66 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB55F48A1B4334FB00FF9B66 /* PostTableViewCell.swift */; };
 		DB55F48D1B433B7500FF9B66 /* ParseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB55F48C1B433B7500FF9B66 /* ParseHelper.swift */; };
+		DB5D4F6C1B4B203800D9CF99 /* PostSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5D4F6B1B4B203800D9CF99 /* PostSectionHeaderView.swift */; };
+		DB61687A1B45A0A0008EA52D /* FriendSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6168791B45A0A0008EA52D /* FriendSearchTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -195,6 +197,8 @@
 		DB55F4861B430D8700FF9B66 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		DB55F48A1B4334FB00FF9B66 /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		DB55F48C1B433B7500FF9B66 /* ParseHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseHelper.swift; sourceTree = "<group>"; };
+		DB5D4F6B1B4B203800D9CF99 /* PostSectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostSectionHeaderView.swift; path = ../../../PostSectionHeaderView.swift; sourceTree = "<group>"; };
+		DB6168791B45A0A0008EA52D /* FriendSearchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendSearchTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -407,6 +411,7 @@
 		DB55F4881B4334DC00FF9B66 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DB6168721B45A079008EA52D /* FriendSearch */,
 				DB55F4891B4334DC00FF9B66 /* Timeline */,
 			);
 			path = Views;
@@ -415,9 +420,18 @@
 		DB55F4891B4334DC00FF9B66 /* Timeline */ = {
 			isa = PBXGroup;
 			children = (
+				DB5D4F6B1B4B203800D9CF99 /* PostSectionHeaderView.swift */,
 				DB55F48A1B4334FB00FF9B66 /* PostTableViewCell.swift */,
 			);
 			path = Timeline;
+			sourceTree = "<group>";
+		};
+		DB6168721B45A079008EA52D /* FriendSearch */ = {
+			isa = PBXGroup;
+			children = (
+				DB6168791B45A0A0008EA52D /* FriendSearchTableViewCell.swift */,
+			);
+			path = FriendSearch;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -607,7 +621,9 @@
 				DB03BA021B41E13B001BFF09 /* TimelineViewController.swift in Sources */,
 				DB55F4841B41EAEC00FF9B66 /* PhotoTakingHelper.swift in Sources */,
 				DB03BA041B41E195001BFF09 /* PhotoViewController.swift in Sources */,
+				DB61687A1B45A0A0008EA52D /* FriendSearchTableViewCell.swift in Sources */,
 				62C8C1E61B06BD6500DC3EA7 /* AppDelegate.swift in Sources */,
+				DB5D4F6C1B4B203800D9CF99 /* PostSectionHeaderView.swift in Sources */,
 				627718971B0A581700AF5C6E /* FilterViewController.swift in Sources */,
 				DB55F48D1B433B7500FF9B66 /* ParseHelper.swift in Sources */,
 				DB55F48B1B4334FB00FF9B66 /* PostTableViewCell.swift in Sources */,
