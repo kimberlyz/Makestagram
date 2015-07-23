@@ -3,6 +3,8 @@
 
 target 'Makestagram' do
 
+pod 'DateTools'
+
 end
 
 target 'MakestagramTests' do
